@@ -1,7 +1,7 @@
 public class Salon{
 
-    private int dias = 6;
-    private int horas = 24;
+    private int dias = 5;
+    private int horas = 23;
 
     private Sede sede;
     private String edificio;
@@ -19,8 +19,9 @@ public class Salon{
         this.capacidad = capacidad;
 
         for(int i = 0; i < disponibilidadSalones.length; i++){
-            for(int j = 0; j < disponibilidadSalones.length; j++){
+            for(int j = 0; j < disponibilidadSalones[0].length; j++){
                 disponibilidadSalones[i][j] = "Libre";
+                //System.out.println("Salon en ["+i+"]["+j+"]: " + disponibilidadSalones[i][j]);
             }
         }
     }
@@ -43,6 +44,10 @@ public class Salon{
 
     public void setHorario(int dia, int hora, Curso curso){
         this.disponibilidadSalones[dia][hora] = "id: " + curso.getId();
+    }
+
+    public String getHorario(int dia, int hora){
+        return disponibilidadSalones[dia][hora];
     }
 
     public void mostrarHorario(){

@@ -13,7 +13,7 @@ public class Driver{
         String disponibilidadSalones[][] = new String[dias][horas];
 
         cargarArchivos(salones, cursos, sedes);
-        menu(salones, cursos, disponibilidadSalones);
+        menu(salones, cursos, disponibilidadSalones, sedes);
     }
 
     public static void cargarArchivos(ArrayList<Salon> salones, ArrayList<Curso> cursos, ArrayList<Sede> sedes){
@@ -106,7 +106,7 @@ public class Driver{
         }
     }
 
-    public static void menu(ArrayList<Salon> salones, ArrayList<Curso> cursos, String disponibilidadSalones[][]){
+    public static void menu(ArrayList<Salon> salones, ArrayList<Curso> cursos, String disponibilidadSalones[][], ArrayList<Sede> sedes){
         Scanner scan = new Scanner(System.in);
         boolean salir = false;
         String opcion;
@@ -128,7 +128,7 @@ public class Driver{
                     consultarCurso(cursos);
                     break;
                 case "3":
-                    System.out.println("3");
+                    asignarCursos(cursos, salones, sedes);
                     break;
                 case "4":
                     System.out.println("¡Hasta pronto!");
@@ -186,5 +186,25 @@ public class Driver{
 
         System.out.println("\nPresione enter para continuar...");
         String continuar = scan.nextLine();
+    }
+
+    public static void asignarCursos(ArrayList<Curso> cursos, ArrayList<Salon> salones, ArrayList<Sede> sedes){
+        for(int i = 0; i < cursos.size(); i++){
+            for(int j = 0; j < salones.size(); j++){
+                if(cursos.get(i).getSede() == salones.get(j).getSede()){
+                    String[] diasSemana =  cursos.get(i).getDias().split(",");
+                    for(int k = 0; k < diasSemana.length; k++){
+                        System.out.println(k);
+                        System.out.println(cursos.get(i).getHorario());
+                        System.out.println(salones.get(j).getHorario(k,cursos.get(i).getHorario()));
+                        /*if(salones.get(j).getHorario(k,cursos.get(i).getHorario()).equals("Libre"))
+                            salones.get(j).setHorario(k,cursos.get(i).getHorario(), cursos.get(i));
+                        else{
+                            System.out.println("Este salon no esta disponible");
+                        }*/
+                    }
+                }
+            }
+        }
     }
 }

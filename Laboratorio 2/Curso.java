@@ -22,6 +22,18 @@ public class Curso{
         return id;
     }
 
+    public String getDias(){
+        return dias;
+    }
+
+    public int getHorario(){
+        return horario;
+    }
+
+    public Sede getSede(){
+        return sede;
+    }
+
     public String toString(){
         return "Id Curso: " + id + "\nId Sede: " + sede.getId() + "\nNombre: " + nombre + "\nHorario: " + horario + "\nDuracion: " + duracion + " horas" + "\nDias: " + dias + "\nCantidad de estudiantes: " + cantidadEstudiantes + "\n";
     }
