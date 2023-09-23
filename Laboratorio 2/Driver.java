@@ -298,7 +298,6 @@ public class Driver{
                                 horasValidas++;
                             else{
                                 diasValidos = 0;
-                                salonesDescartados++;
                             }
                             
                             if(horasValidas >= (cursos.get(i).getDuracion()-1))

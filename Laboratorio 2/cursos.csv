@@ -1,7 +1,7 @@
 ﻿id_curso;id_sede;nombre_curso;horario;duracion;dias;cantidad_estudiantes
-20081;110;Programacion Orientada a Objetos;7;3;lunes,viernes;36
-20161;220;Fisica 1;10;2;lunes,martes,miercoles;35
-17012;310;Estadistica 1;7;1;martes,jueves;32
-17180;220;Ciudadania Global;10;2;lunes,martes;35
+20081;110;Programación Orientada a Objetos;7;3;lunes,viernes;36
+20161;210;Fisica 1;12;2;lunes,martes,miercoles;35
+17012;310;Estadística 1;7;1;martes,jueves;32
+17180;220;Ciudadanía Global;10;2;lunes,martes;35
 20281;120;Calculo 1;10;2;lunes,miercoles,viernes;34
 20027;420;Algebra Lineal 1;8;2;martes,jueves;42
